@@ -1,0 +1,10 @@
+.container {
+  font-family: "Roboto", sans-serif;
+}
+.container table tbody {
+  font-size: 14px;
+}
+.container table tbody .key {
+  font-size: 11px;
+  color: #818181;
+}

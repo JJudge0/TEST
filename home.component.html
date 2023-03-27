@@ -1,0 +1,82 @@
+<!--Adds nav bar components-->
+
+<app-navigation></app-navigation> <!--Calling Nav Bar-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>HomePage</title>
+</head>
+<div class="home container-fluid">
+  <div class="overlay">
+
+    
+<div class="container">
+  <div class="row">
+      <div class="col-md-6">
+          <div class="card" class="card">
+              <div class="text-center" >
+                  <h1 class="w-100 text-center test">Login Portal</h1>
+                  <h6 class="w-100 text-center">Welcome to Evoting, Your Vote matters!</h6>
+              </div>
+                <form class="mt-2" #from="ngForm" (ngSubmit)="login()">
+                  <!-- <div class="form-group" class="h6">
+                    <label for="exampleInputEmail1" class="test">userID</label>
+                    <div class="col-sm-8 col-lg-8">
+                      <input [(ngModel)]="model.userId" name="userId" type="text" id="userId" class="form-control patID"
+                        placeholder="User Account ID" disabled>
+                    </div>
+                     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"> 
+                    <small id="emailHelp" class="form-text text-muted" class="test">We'll never share your email with anyone else.</small>
+                  </div> -->
+
+                  <div class="form-group row my-2" class="h6">
+                    <label class="col-sm-4 col-lg-4" class="test">User ID</label>
+                    <div>
+                      <input [(ngModel)]="model.userId" name="userId" type="text" id="userId" class="form-control patID" placeholder="User Account ID" disabled>
+                    </div>
+                  </div>
+
+                  <div class="form-group" class="h6">
+                    <label class="test">passportID</label>
+                    <div>
+                      <input [(ngModel)]="model.passportId" name="passportId" type="text" id="passportId" class="form-control patID" placeholder="Passport ID" required>
+                    </div>
+                  </div>
+                    <!-- <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"> -->
+                    <!-- <small id="emailHelp" class="form-text text-muted" class="test"></small> -->
+                  <!-- <div class="form-group">
+                    <label for="exampleInputPassword1" class="test">Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1">
+                  </div> -->
+
+                  <div class="form-group row my-2" class="h6">
+                    <label class="col-sm-4 col-lg-4" class="test">Password</label>
+                    <div>
+                      <input [(ngModel)]="model.pwd" name="pwd" type="password" id="password" class="form-control patID" placeholder="Password" required>
+                    </div>
+                  </div>
+
+
+                  
+                  <button type="submit" class="btn btn-primary">Login</button>
+                </form>
+                  <div class="test">If you are a New User <a [routerLink]="'/register'"> Register </a></div>
+            </div>
+         </div> 
+    </div>
+</div>
+</div>
+</div>
+<app-progress_card [show]="progressShow" [msg_text]="progressMsg" [warn]="progressWarn"
+[success]="progressSuccess"  (close)="close()"></app-progress_card>
+
+
+
+
+
+
+
+
+
+
+</html>

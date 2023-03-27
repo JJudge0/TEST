@@ -1,0 +1,14 @@
+.container .active .table tbody {
+  font-size: 13px;
+  font-family: "Poppins", sans-serif;
+}
+.container .modal th {
+  text-align: center;
+  vertical-align: middle;
+  font-size: 16px;
+}
+.container .modal td {
+  text-align: center;
+  vertical-align: middle;
+  font-size: 14px;
+}

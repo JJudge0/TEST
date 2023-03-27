@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Admin-Dashboard</title>
+</head>
+<div class="overlay" [hidden]="isAdmin">
+</div>
+<app-progress_card [success]="isAdmin" [show]="!isAdmin" [msg_text]="progressMsg" [warn]="progressWarn"></app-progress_card>
+<div class="dashboard"></div>
+<app-header (onCollapse)="isCollapse = !isCollapse"></app-header>
+<div class="container-fluid m-0">
+  <div class="row m-0">
+    <app-sidebar [isCollapsed]="isCollapse"></app-sidebar>
+    <main class="col-md-10 ms-sm-auto col-lg-10 m-0">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+</div>
+</html>

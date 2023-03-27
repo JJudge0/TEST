@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adding Election</title>
+</head>
+<div class="container-fluid">
+    <h3 class="mt-3">Duration</h3> <!--Add a party-->
+    <hr> 
+    <div class="container mb-4">
+        <form [noValidate]="false" #electionForm="ngForm" (ngSubmit)="addELection()">
+            <div class="row form-row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Start Date<sup class="fas fa-asterisk fw-normal text-danger"></sup></label>
+                        <div class="cal-icon">
+                            <input [(ngModel)]="model.startDate" name="start" id="sd" type="datetime-local" class="form-control" placeholder="date of Joining" required />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>End Date<sup class="fas fa-asterisk fw-normal text-danger"></sup></label>
+                        <div class="cal-icon">
+                            <input [(ngModel)]="model.endDate" name="end" id="ed" type="datetime-local" class="form-control" placeholder="date of Joining" required />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6">
+                    <div class="form-group">
+                        <label>Party<sup class="fas fa-asterisk fw-normal text-danger"></sup></label>
+                        <input [(ngModel)]="model.constituency" name="constituency" (change)="constChanged()" id="spec" class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search a party...">
+                        <datalist id="datalistOptions" class="bg-light">
+              <option *ngFor="let const of Constituencies"  [value]="const.id">{{const.constituencyName}}</option>
+            </datalist> </div>
+                </div>
+                <div class="col-12 col-sm-6 mt-4 fs-4">{{constituency}}
+                </div>
+            </div>
+            <button type="submit" id="btn" class="btn btn-primary"> Add Election</button>
+        </form>
+      <div class="progress fw-bold" *ngIf="progress_BAR"> Adding Election loading....
+           <!-- <progress> </progress> -->
+      </div> 
+      <!-- PROGRESS BAR -->
+     
+    </div>
+    <!-- <app-progress_card [success]="success" [show]="show" [msg_text]="msg_text" [warn]="warn" (retry)="onAddDocSubmit()"
+    (close)="onClose()">
+  </app-progress_card> -->
+</div>
+</html>

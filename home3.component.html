@@ -1,0 +1,82 @@
+<!--Adds nav bar components-->
+
+<app-navigation></app-navigation> <!--Calling Nav Bar-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>HomePage</title>
+</head>
+<div class="home container-fluid">
+  <div class="overlay">
+    <section class="her-wrap js-fullheight "data-section="home" data-stellar-background-ratio="0.5">
+      <div class="container">
+        <div class="row no-gutters slider-text js-fullheight" data-scrollax-parent="true">
+          <div class="content">
+            <div class="subh">
+              <h3 class="w-100 text-center">Login Portal</h3>
+              <h6 class="w-100 text-center">Welcome to Evoting, Your Vote matters!</h6>
+              <form class="mt-2" #from="ngForm" (ngSubmit)="login()">
+                <!---->
+                <!---->
+                <div class="form-group row my-2">
+                  <label class="col-sm-4 col-lg-4">
+                    User ID
+                  </label>
+                  <div class="col-sm-8 col-lg-8">
+                    <input [(ngModel)]="model.userId" name="userId" type="text" id="userId" class="form-control patID"
+                      placeholder="User Account ID" disabled>
+                  </div>
+                </div>
+                <!---->
+                <!---->
+                <div class="form-group row my-2">
+                  <label class="col-sm-4 col-lg-4">
+                    Passport ID
+                  </label>
+                  <div class="col-sm-8 col-lg-8">
+                    <input [(ngModel)]="model.passportId" name="passportId" type="text" id="passportId" class="form-control patID" placeholder="Passport ID">
+                  </div>
+                </div>
+                <!---->
+                <!---->
+                <div class="form-group row my-2">
+                  <label class="col-sm-4 col-lg-4">
+                    Password
+                  </label>
+                  <div class="col-sm-8 col-lg-8">
+                    <input [(ngModel)]="model.pwd" name="pwd" type="password" id="password" class="form-control patID"
+                      placeholder="Password">
+                  </div>
+                </div>
+                <!---->
+                <div class="form-group row justify-content-end my-3">
+                  <div class="col-sm-5">
+                    <button type="submit" class="btn btn-primary rounded-square-pill px-5">
+                      Login
+                    </button>
+                  </div>
+                </div>
+
+                <!-- <div class="form-group  my-3">
+                    <button type="submit" class="btn  rounded-square-pill px-5"> <a [routerLink]="'register'" class="text-danger"> Signup</a> </button> 
+                  </div> -->
+              
+
+                <div class="form-group row justify-content-end my-3">
+                  <div class="col-sm-6">If you are a New User <a [routerLink]="'register'" class="text-danger"> Register </a></div>
+                </div>
+              </form>
+              <p class="mb-4"> </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </div>
+  <app-progress_card [show]="progressShow" [msg_text]="progressMsg" [warn]="progressWarn"
+  [success]="progressSuccess"  (close)="close()"></app-progress_card>
+</div>
+
+
+</html>

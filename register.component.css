@@ -1,0 +1,112 @@
+/* .container-fluid {
+  height: 100vh;
+  width: 100%;
+  background-image: url("../../assets/images/Homepagebackground.jpg");
+  background-color: #3b5459;
+  background-size: cover;
+  font-size: 14px;
+} */
+.container-fluid .container {
+  height: 100vh;
+  font-family: "Poppins", sans-serif;
+}
+.container-fluid .container .row {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.container-fluid .container .row .appointment {
+  margin-top: 250px;
+  padding: 10px;
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.6980392157);
+}
+.container-fluid .container .row .appointment form input {
+  font-size: 13px;
+}
+.container-fluid .container .row .appointment form .patID {
+  font-size: 11px;
+}
+
+/* removes whitespacing from both sides */
+.home {
+  width: 100%;
+  height: calc(100vh - 80px);
+  padding: 0px;
+  margin: 0px;
+}
+.home .overlay {
+  width: 100%;
+  height: 100%;
+  /* background-image: url("../../assets/images/Homepagebackground.jpg"); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-clip: content-box;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.home .overlay section { 
+  /* CENTERS IT */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.home .overlay section .container {
+  width: 100%;
+}
+
+
+.home .overlay section .container .row {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+
+.home .overlay section .container .row .content {
+  max-width: 45%;
+  min-width: 45%;
+  padding: 15px;
+  border-radius: 15px;
+  background-color: rgba(226, 226, 226, 0.8705882353);
+}
+
+
+.home .overlay section .container form {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.home .overlay section .container form input {
+  font-size: 13px;
+}
+.home .overlay section .container form #userId {
+  font-size: 12px;
+}
+
+.card{
+ margin-top: 10px;
+ border: none;
+ width: 500px;
+ padding: 40px;
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+ background: hsla(205,46%,30%,1);
+ background: linear-gradient(90deg, hsla(205,46%,30%,1) 0%, hsla(260, 29%, 36%, 1)100%);
+}
+
+.card label h1,h6{
+  color: #fff;
+}
+
+.label {
+  color: #fff;
+}
+
+.test {
+  color: #fff;
+}

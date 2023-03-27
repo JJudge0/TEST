@@ -1,0 +1,123 @@
+<!--Adds nav bar components-->
+
+<app-navigation></app-navigation> <!--Calling Nav Bar-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>HomePage</title>
+</head>
+<div class="home container-fluid">
+    <div class="overlay">
+<div class="container">
+  <div class="row">
+      <div class="col-md-6">
+          <div class="card" class="card">
+              <div class="text-center" >
+                  <h1 class="test">Register</h1>
+                  <h6> Please enter email & password!!</h6>
+              </div>
+                <form #from="ngForm" (ngSubmit)="addVoter()">
+
+                    <!---->
+                    <div class="form-group row my-2">
+                        <label class="col-sm-4 col-lg-4" class="test">Voter ID</label>
+                            <input [(ngModel)]="model.userId" name="userId" type="text" id="usersId" class="form-control patID" placeholder="User Account ID" Disabled>
+                        </div>
+                    <!---->
+
+                    <!---->
+                    <div class="form-group row my-2">
+                      <label class="col-sm-4 col-lg-4" class="test">Name</label>
+                     
+                          <input [(ngModel)]="model.fName" name="fName" type="text" id="fname" class="form-control patID" placeholder="Full name">
+                      </div>
+             
+                   <!---->
+
+                    <!---->
+                    <div class="form-group row my-2">
+                      <label class="col-sm-4 col-lg-4" class="test">
+                          PassPort ID
+                      </label>
+                    
+                          <input [(ngModel)]="model.passportId" name="passportId" type="text" id="passportId" class="form-control patID" placeholder="Passport ID">
+                   
+                  </div>
+                  <!---->
+                  <!---->
+                  <div class="form-group row my-2">
+                      <label class="col-sm-4 col-lg-4" class="test">
+                          Password
+                      </label>
+                  
+                          <input [(ngModel)]="model.pwd" name="pwd" type="text" id="password" class="form-control patID" placeholder="Password">
+                     
+                  </div>
+                  <!---->
+
+                  <div class="form-group row my-2">
+                      <label class="col-sm-4 col-lg-4" class="test" >Party</label>
+                
+                          <input [(ngModel)]="model.constituency" name="constituency" (change)="constChanged()" id="spec" class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
+                          <datalist id="datalistOptions" class="bg-light">
+                              <option *ngFor="let const of Constituencies1" [value]="const.id">
+                                  {{const.constituencyName}}</option>
+                          </datalist>
+                     
+                  </div>
+                  <div class="col-12 text-center" class="test">{{"PartyName"+"="+constituency}}</div>
+                  <!---->
+                  <div class="form-group row justify-content-end my-3">
+                      <div class="col-sm-5">
+                          <button type="submit" class="btn btn-primary">
+                              Register
+                          </button>
+                      </div>
+                  </div>
+
+
+
+
+
+
+
+
+
+
+
+                    
+                  <!-- <div class="form-group" class="h6">
+                    <label for="exampleInputEmail1" class="test">Email address</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <small id="emailHelp" class="form-text text-muted" class="test">We'll never share your email with anyone else.</small>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="exampleInputPassword1" class="test">Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1">
+                  </div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                  <!-- <button type="submit" class="btn btn-primary">Signup</button> -->
+                </form>
+                <div class="test">Already Have a Account?<a [routerLink]="'home'"> Login </a></div>
+            </div>
+         </div> 
+    </div>
+</div>
+</div>
+<app-progress_card [show]="progressShow" [msg_text]="progressMsg" [warn]="progressWarn" [success]="progressSuccess" (close)="close()"></app-progress_card>
+</div>
+</html>

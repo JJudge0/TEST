@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voters</title>
+</head>
+<div class="container-fluid">
+  <div class="container mt-5">
+    <div class="h3">Voters</div>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">No.</th>
+          <th scope="col">Voter Name</th>
+          <th scope="col">Political Party Name</th>
+          <!-- <th scope="col">Handle</th> -->
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let voter of Voters; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>
+            {{ voter.fName }} <br />
+            <span class="key">{{ voter.userKey }}</span>
+          </td>
+          <td>{{ voter.constituency.constituencyName }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</html>

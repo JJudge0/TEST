@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+</head>
+<div class="container-fluid">
+  <div class="container">
+    <div class="row mt-2">
+      <div class="col-md-6" *ngFor="let card of Titles; index as i">
+        <app-card [background]="Background[i]" [title]="Titles[i]"  [count]="Count[i]"></app-card>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <h3>Live Elections</h3>
+      <hr>
+      <h6 *ngIf="!Elections.length">no Live Elections</h6>
+      <table class="table table-hover" *ngIf="Elections.length">
+        <thead>
+          <tr>
+            <th scope="col">No.</th>
+            <th scope="col">Election Id</th>
+            <th scope="col">Party</th>
+            <th scope="col">Start Date</th>
+            <th scope="col">End Date</th>
+            <th scope="col">Candidates</th>
+          </tr>
+        </thead>
+        <tbody *ngIf="true">
+          <tr *ngFor="let elec of Elections;let i = index">
+            <td>{{i+1}}</td>
+            <td>{{elec.electionId}}</td>
+            <td>{{elec.constituency.constituencyName}}</td>
+            <td>{{elec.startDate | date}}</td>
+            <td>{{elec.endDate | date}}</td>
+            <td><button class="btn btn-sm p-1 btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                (click)="getCandidates(elec.electionId)">View</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Candidates</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th scope="col">No.</th>
+                  <th scope="col">Candidate</th>
+                  <th scope="col">Party</th>
+                  <th scope="col">Candidate Icon</th>
+                  <th scope="col">Action</th>
+                </tr>
+              </thead>
+              <h5 *ngIf="Candidates.length === 0">no candidates</h5>
+              <tbody *ngIf="Candidates.length >= 1">
+                <tr *ngFor="let cand of Candidates;let i = index">
+                  <td>{{i+1}}</td>
+                  <td> <img [src]="server+cand.user" alt="" width="100px" height="100px">
+                   <h6>Candiates FirstName </h6> 
+                    {{cand.fName}} <br> 
+                    <h6>Candiates LastName</h6> 
+                    {{cand.lName}} <br>
+                  </td>
+                  <td>
+                    {{cand.party}}
+                  </td>
+                  <td>
+                    <img [src]="server+cand.icon" alt="" width="100px" height="100px">
+                  </td>
+                  <td>
+                    {{cand.endDate | date}}
+                  </td>
+                  <td>
+                    {{Votes[i]}}
+                    <a class="btn btn-sm p-1 btn-danger" (click)="getVotes(cand.id,i)">Reload </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</html>

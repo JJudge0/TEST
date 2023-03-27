@@ -1,0 +1,19 @@
+.container {
+  margin-top: 35px;
+  font-family: "Poppins", sans-serif;
+}
+.container table th {
+  text-align: center;
+  vertical-align: middle;
+  font-size: 16px;
+}
+.container table th tr td {
+  text-align: center;
+  vertical-align: middle;
+  font-size: 14px;
+}
+.container .modal td {
+  text-align: center;
+  vertical-align: middle;
+  font-size: 14px;
+}
